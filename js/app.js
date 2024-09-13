@@ -17,13 +17,21 @@
  * Great to have comments before crucial code sections within the procedure.
  */
 
-// Define Global Variables
+/* 
+    Define Global Variables 
+*/
+// Dom el's
 const navbarLists = document.getElementById("navbar__list");
 const sections = document.querySelectorAll("section");
 
-// End Global Variables
+// empty li to be filled later
+let li = [];
 
-// Start Helper Functions
+/* 
+    End Global Variables 
+*/
+
+/* Start Helper Functions */
 function makeActive() {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
@@ -35,22 +43,42 @@ function makeActive() {
     }
   }
 }
+/* 
+    End Helper Functions
+*/
 
-// End Helper Functions
+/* 
+    Begin Main Functions 
+*/
 
-// Begin Main Functions
+/* 
+    build the nav 
+*/
 
-// build the nav
+/* 
+    Add class 'active' to section when near top of viewport 
+*/
 
-// Add class 'active' to section when near top of viewport
+/* 
+    Scroll to anchor ID using scrollTO event 
+*/
 
-// Scroll to anchor ID using scrollTO event
+/* 
+    End Main Functions 
+*/
 
-// End Main Functions
+/* 
+    Begin Events 
+*/
 
-// Begin Events
-// Build menu
+/* 
+    Build menu 
+*/
 
-// Scroll to section on link click
+/* 
+    Scroll to section on link click 
+*/
 
-// Set sections as active
+/* 
+    Set sections as active
+*/
