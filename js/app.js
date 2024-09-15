@@ -27,11 +27,6 @@ const sections = document.querySelectorAll("section");
 let li = [];
 
 /* Helper Functions */
-const getPosition = function (pos) {
-  // gets the position of parameter
-  const position = pos.getBoundingClientRect();
-  console.log(position.top);
-};
 
 /* Main Functions */
 
@@ -52,17 +47,12 @@ for (let i = 1; i < sections.length + 1; i++) {
   navbarLists.appendChild(createLi);
 }
 
-/* Scroll to section on link click */
-li.forEach((el, i) => {
-  el.addEventListener("click", function (e) {});
-});
-
 /* Add class 'active' to section when near top of viewport */
 function makeActive() {
   for (const section of sections) {
     const box = section.getBoundingClientRect();
     //Find a value that works best, but 150 seems to be a good start.
-    if (box.top <= 0 && box.bottom >= 200) {
+    if (box.top <= 150 && box.bottom >= 200) {
       //apply active state on current section and corresponding Nav link
       section.classList.add("active");
     } else {
@@ -75,21 +65,21 @@ function makeActive() {
 /* Scroll to anchor ID using scrollTO event */
 li.map((el, i) => {
   // adds click event to all list items
-  el.addEventListener("click", function (e) {
+  el.addEventListener("click", function () {
     // gets section index and scrolls it into view
-    sections[i].scrollIntoView({ behavior: "smooth" });
+
+    if (sections[i].dataset.nav === el.dataset.nav) {
+      //  Scroll to section on link click
+      sections[i].scrollIntoView({
+        top: sections[i].getBoundingClientRect().top,
+        behavior: "smooth",
+      });
+    } else {
+      console.log("not same");
+    }
   });
 });
-
-/* Begin Events */
+// runs makeActive when page is scrolled
 document.addEventListener("scroll", function () {
-  // gives active class dpending on which section is in view
   makeActive();
 });
-/* Build menu */
-
-/* Scroll to section on link click */
-
-/* 
-    Set sections as active
-*/
