@@ -1,36 +1,9 @@
-/**
- *
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- *
- * Dependencies: None
- *
- * JS Version: ES2015/ES6
- *
- * JS Standard: ESlint
- *
- */
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
- */
-
-/* Define Global Variables */
-
 // DOM el's
 const navbarLists = document.getElementById("navbar__list");
 const sections = document.querySelectorAll("section");
 
 // empty li to be filled later
 let li = [];
-
-/* Helper Functions */
-
-/* Main Functions */
-
-/* build the nav */
 
 // creates navbar links
 for (let i = 1; i < sections.length + 1; i++) {
