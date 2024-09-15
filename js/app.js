@@ -36,7 +36,7 @@ let li = [];
 for (let i = 1; i < sections.length + 1; i++) {
   // creates li with class and dataset
   const createLi = document.createElement("li");
-  createLi.textContent = `Section ${i}`;
+  createLi.innerHTML = `Section ${i}`;
   createLi.classList.add("nav__li");
   createLi.dataset.nav = `Section ${i}`;
 
