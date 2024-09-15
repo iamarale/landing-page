@@ -50,6 +50,12 @@ p {
 /* ---- Layout Rules ---- */
 main {
   margin: 10vh 1em 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .main-hero {
