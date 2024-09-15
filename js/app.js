@@ -47,8 +47,6 @@ li.map((el, i) => {
         top: sections[i].getBoundingClientRect().top,
         behavior: "smooth",
       });
-    } else {
-      console.log("not same");
     }
   });
 });
