@@ -113,6 +113,10 @@ section {
   padding: 0.5rem;
   border-radius: 0.25rem;
 }
+.nav__li.active {
+  background: #333;
+  color: #ccc;
+}
 .nav__li:hover {
   background: #333;
   color: #fff;
