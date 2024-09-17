@@ -57,15 +57,29 @@ function navToggleActive(el) {
   }
 }
 
+li.map((el, i) => {
+  // adds click event to all list items
+  el.addEventListener("click", function () {
+    // gets section index and scrolls it into view
+
+    if (sections[i].dataset.nav === el.dataset.nav) {
+      //  Scroll to section on link click
+      sections[i].scrollIntoView({
+        top: sections[i].getBoundingClientRect().top,
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
 // runs makeActive when page is scrolled
 document.addEventListener("scroll", function () {
   makeActive();
-
-  // check if section in view
-
   for (const section of sections) {
+    // checks if top value is between 0-150
     if (getPosition(section).top < 150 && getPosition(section).top > 0) {
       li.forEach((el) => {
+        // checks if li and section have the same data-nav value
         if (el.dataset.nav === section.dataset.nav) {
           navToggleActive(el);
         }
@@ -74,14 +88,3 @@ document.addEventListener("scroll", function () {
     }
   }
 });
-/*
-  el.addEventListener("click", function () {
-    // gets section index and scrolls it into view
-    if (sections[i].dataset.nav === el.dataset.nav) {
-      //  Scroll to section on link click
-      sections[i].scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
-*/
