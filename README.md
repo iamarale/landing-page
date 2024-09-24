@@ -14,4 +14,4 @@ To use this project, create additional sections in the HTML and see how more nav
 
 ## to clone this repo
 
-` npm install https://github.com/iamarale/landing-page.git`
+` git clone https://github.com/iamarale/landing-page.git`
